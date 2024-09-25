@@ -1,0 +1,594 @@
+@import './global.scss';
+
+.header {
+    @include Container(10%, 10%, 0, margin);
+    @include flex(row, space-between, center);
+    font-size: 30px;
+    @media (max-width: 367px) {
+        @include marginContainer(1%, 1%);
+        font-size: 20px;
+    }
+    &__burger {
+        display: none;
+        @media (max-width: 367px) {
+            @include flex(row, space-between);
+            width: 250px;
+        }
+    }
+    &__desktop {
+        @include flex(row, space-between, center);
+        width: 100%;
+        @media (max-width: 367px) {
+            display: none;  
+        }
+    }
+    &__logo {
+        color: #F2F9E3;
+        @include flex(row, space-between, center);
+        &_img {
+            width: 66px;
+            height: 71px;
+        }
+        @media (max-width: 367px) {
+            @include flex(row, space-between);
+        }
+    }
+    &__butns {
+        width: 50%;
+        @include flex(row, space-between);     
+        a {
+            color: #FAED26;
+            text-decoration: none;
+        }
+        
+    }
+
+    
+}
+
+// All buttons
+.btn {
+    @include flexCenter(column, );
+    @include hoverButtonBigger();
+} 
+// Main section
+.main {
+    padding-top: 2%;
+    background: url(../assets/img/final_bg_1.png) no-repeat center center / cover;
+    background-color: var(--gray);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    @include adaptiv(mobile_screen) {
+        margin: 0;
+        @include flexCenter();
+        background-color: #1c1c1c; 
+    }
+    
+    &__title {
+        font-size: 80px;
+        color: #FAED26;
+        margin-top: 10%;
+        text-align: center;
+        text-transform: uppercase;
+        width: -webkit-fill-available;
+        @include flex(row, center);
+        justify-content: center;
+        @media (max-width: 367px) {
+            margin: 0;
+            font-size: 40px;
+            max-width: 222px; 
+            margin-top: 134px;
+        }
+    }
+    &__imgArrow {
+        width: 100px;
+        height: 100px;
+        margin-top: 10%;
+        margin-left: 50%;
+        transition: ease-in 0.2s;
+        &:hover {
+            transform: translate(0, 150px);
+        }
+        @media (max-width: 367px) {
+            display: none;
+        }
+    }
+    &__text {
+        &-mobile {
+            display: none;
+            @media (max-width: 367px) {
+                color: #FAED26;
+                display: block;
+                max-width: 256px;
+                font-size: 20px;
+                letter-spacing: 5px;
+                text-align: center;
+                margin-top: 100px;          
+            }
+        }
+    }
+}
+// Course section
+.course {
+    height: 100vh;
+    background: url(../assets/img/bg-second.png) no-repeat center center / cover;
+    background-color: #393939;
+    @include Container(10%, 10%, 2%, padding);
+    @media (max-width: 367px) {
+        @include paddingContainer(2%, 2%, 5%);
+        @include flexCenter();  
+    }
+    &__title {
+        font-size: 80px;
+        text-transform: uppercase;
+        width: -webkit-fill-available;
+        display: flex;
+        justify-content: center;
+        color: #FAED26;
+        margin-bottom: 5%;
+        @media (max-width: 367px) {
+            margin: 0;
+            margin-bottom: 15%;
+            font-size: 40px;
+            text-align: center;
+        }
+    }
+    &__cards {
+        @include flex(row, space-between);
+        color: #FFFDD5;
+        @media (max-width: 367px) {
+            @include flex(row, space-between, center);
+        }
+    }
+    &__arrow {
+        display: none;
+        @media (max-width: 367px) {
+            display: flex;
+            @include Container(10px, 10px, 0, margin);
+            &_reverse {
+                transform: rotate(180deg);
+            }
+    }
+    }
+    &__card {
+        max-width: 358px;
+        width: 100%;
+        @include flexCenter();
+        text-align: center;
+        border-radius: 20px;
+        background-color: #111111;
+        margin-bottom: 30px;
+        @include hoverButtonSmaller();
+        &-none {
+            @media (max-width: 367px) {
+                display: none;         
+            }
+        }
+        
+        &_img {
+            border-radius: 40px;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 40px;
+        }
+        &_title {
+            font-family: Monterat;
+            font-weight: 900;
+            font-size: 20px;
+            margin-bottom: 30px;
+            margin-top: 39px;
+        }
+        &_subtitle {
+            font-family: Monterat;
+            font-weight: 900;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        &_p {
+            margin-left: 57px;
+            margin-right: 57px;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+        &_btn {
+            a {
+                color: #FAED26;
+                font-size: 30px;
+                margin-bottom: 30px;
+                text-decoration: none;
+            }
+            
+        }
+        
+    }
+    &__more {
+        &_text {
+            font-size: 30px;
+            margin-top: 5%;
+            color: #FAED26;
+            text-decoration: none;
+        }
+    }
+}
+// Food section
+.food {
+    height: 100vh;
+    background: url(../assets/img/bg-threee.png) no-repeat center center/cover;
+    background-color: #393939;
+    padding-top: 10px;
+    @media (max-width: 367px) {
+        @include flexCenter();
+        @include Container(8%, 8%, 5%, padding);
+    }
+    &__title {
+        font-size: 80px;
+        color: #FAED26;
+        display: flex;
+        justify-content: center;
+        margin-bottom:10px;
+        @media (max-width: 367px) {
+            font-size: 40px;
+        }
+        &_desktop {
+            @media (max-width: 367px) {
+                display: none;
+            }
+        }
+        &_mobile {
+            display: none;
+            @media (max-width: 367px) {
+                display: block;
+            }
+        }
+    }
+
+    &__btn {
+        @include flexCenter();
+        text-align: center;
+        margin-top: 20px;
+        @include hoverButtonBigger();
+        @media (max-width: 367px) {
+            display: none;
+        }
+        &-mobile {
+            display: none;
+            @media (max-width: 367px) {
+                @include flexCenter();
+            }
+        }
+        a {
+            color: #FAED26;
+            font-size: 30px;
+            text-decoration: none;
+            @media (max-width: 367px) {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__main {
+        @include flex(row, space-between);
+        @include Container(10%, 10%, 0, margin);
+        @media (max-width: 367px) {
+            margin: 0;
+        }
+
+    }
+    &__cardsMain {
+        @include flex(row);
+        @media (max-width: 367px) {
+            @include flexCenter();
+        }   
+    }
+
+    &__cardBlock {
+        @include flexCenter();
+    }
+
+    &__cards {
+        &-mobile {
+            display: none;
+            @media (max-width: 367px) {
+                @include flex(row, space-between);
+            }
+        }
+        &-desktop {
+            @include flex(column);
+            @media (max-width: 367px) {
+                display: none;
+            }
+        }
+        
+    }
+    &__extraText {
+        font-size: 30px;
+        max-width: 160px;
+        color: #F2F9E3;
+        text-align: center;
+        margin-top: 10%;
+        @media (max-width: 367px) {
+            display: none;
+        }
+    }
+
+    &__card {
+        background-color: #C6C6AD;
+        border-radius: 12px;
+        @include flexCenter();
+        text-align: center;
+        width: 160px;
+        height: 180px;
+        margin-bottom: 20px;
+        @include hoverButtonBigger();
+        &_titleMobile {
+            display: none;
+            @media (max-width: 367px) {
+                display: block;
+                margin-bottom: 14px;
+                margin-top: 29px;
+            }
+            
+        }
+        &_titleMobile {
+            color: #FAED26;
+            font-size: 30px;
+        }
+        &_arrowMobile {
+            width: 30px;
+            @media (max-width: 367px) {
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            &-rotate {
+                transform: rotate(180deg);
+            }
+        }
+        &_img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 13px;
+        }
+        &_mass {
+            font-size: 7px;
+            margin-bottom: 5px;
+        }
+        &_price {
+            font-size: 7px;
+            margin-bottom: 2px;
+        }
+        &_title {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        &_BGU {
+            font-size: 7px;
+            margin-bottom: 8px;
+        }
+        &_btn {
+            font-size: 15px;
+            color: #3F47FF;
+            margin-bottom: 8px;
+            @include hoverButtonBigger();
+        }
+        &_comp {
+            font-size: 8px; 
+        }
+    }
+    &__arrow{
+        @include Container(20px, 20px, 0, margin);
+    }
+}
+// Aboniment section
+.aboniments {
+    display: flex;
+    height: 100vh;
+    background: url(../assets/img/BgLast__page.png) no-repeat center center/cover;
+    background-color: #393939;
+    flex-direction: column;
+    @include Container(10%, 10%, 0, padding);
+    &__text {
+        @include flexCenter();
+        @media (max-width: 367px) {
+            h1 {
+                font-size: 40px;
+                margin-bottom: 50px;
+                margin-top: 20px;
+            }
+            h2 {
+                font-size: 20px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    &__more {
+        @include hoverButtonBigger();
+        @include flexCenter();
+        &_text {
+            font-size: 30px;
+            color: #FAED26;
+            text-decoration: none;
+            
+        }
+    }
+
+    &__title {
+        color: #FAED26;
+        font-size: 80px;
+        margin-bottom: 50px;
+    }
+
+    &__city {
+        font-size: 50px;
+        color: #FAED26;
+        margin-bottom: 44px;
+    }
+
+    &__editCity {
+        font-size: 40px;
+        color: #FAED26;
+        @include flexCenter();
+        margin-bottom: 30px;
+        @include hoverButtonBigger();
+        @media (max-width: 367px) {
+            display: none;
+        }
+
+        a {
+            color: #FAED26;
+            text-decoration: none;
+        }
+    }
+
+    &__ourVote {
+        color: #FAED26;
+        font-size: 45px;
+        margin-bottom: 31px;
+        @media (max-width: 367px) {
+            display: none;
+        }
+    }
+
+    &__cards {
+        @include flex(row, space-between);
+        color: #F2F9E3;
+        margin-bottom: 30px;
+        width: -webkit-fill-available;
+        @media (max-width: 367px) {
+            @include flex(row, center);
+        }
+    }
+
+    &__card {
+        background-color: #111111;
+        border-radius: 20px;
+        @include flexCenter();
+        text-align: center;
+        width: 30%;
+        @include Container(50px, 50px, 0, padding);
+        @include hoverButtonBigger();
+        @media (max-width: 367px) {
+            width: 100%;
+        }
+        &_arrowMobile {
+            display: none;
+            @include Container(10px, 10px, 0, margin);
+            width: 30px;
+            @media (max-width: 367px) {
+                display: block;
+            }
+
+            &-rotate {
+                transform: rotate(180deg);
+            }
+        }
+        &-none {
+            @media (max-width: 367px) {
+                display: none;
+            }
+        }
+        &_img {
+            width: 150px;
+            height: 85px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        &_title {
+            font-size: 30px;
+            margin-bottom: 14px;
+            
+        }
+        &_adress {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        &_description {
+            font-size: 15px;
+            margin-bottom: 50px;
+        }
+        &_btn {
+            a {
+                font-size: 30px;
+                color: #FAED26;
+                margin-bottom: 23px;
+                text-decoration: none;  
+            } 
+        }
+    }
+}
+// Big line section
+.ToFoter_line {
+    margin-top: 70px;
+}
+// Footer
+.footer {
+    background-color: #1c1c1c;
+    height: 160px;
+    @include flex(row, space-between);
+    color: #F2F9E3;
+    @include Container(10%, 10%, 30px, padding);
+    &__first {
+        @include flex(column);
+        &_title {
+            font-size: 40px;
+            margin-bottom: 20px;
+            @media (max-width: 367px) {
+                font-size: 10px;
+            }
+        }
+        &_rules {
+            font-size: 20px;
+            margin-bottom: 15px;
+            @media (max-width: 367px) {
+                font-size: 10px;
+            }
+
+        }
+        &_authors {
+            font-size: 15px;
+            @media (max-width: 367px) {
+                font-size: 5px;
+            }
+        }
+    }
+    &__contacts {
+        @include flex(column);
+        &_contact {
+            font-size: 25px;
+            margin-bottom: 20px;
+            @media (max-width: 367px) {
+                font-size: 10px;
+            }
+        }
+        &_number {
+            font-size: 15px;
+            color: #F2F9E3;
+            text-decoration: none;
+            @media (max-width: 367px) {
+                font-size: 8px;
+            }
+            
+        }
+    }
+    &__logo {
+        @include flex(row, center);
+        @media (max-width: 367px) {
+            display: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            @include flex(row, center);
+        }
+        &_img {
+            width: 65px;
+            height: 70px;
+        }
+        &_text {
+            font-size: 30px;
+            margin-top: 30px;
+        }
+    }
+}
